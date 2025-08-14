@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opinión del Producto</title>
+    <link rel="stylesheet" href="css/navegador.css">
+    <link rel="stylesheet" href="css/rosa.css" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🍰 <strong>Delicias Rosadas</strong></div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="hola.html" id="about-link">Quién Somos</a>
+            <a href="rosa.html">Formulario</a>
+            <a href="vale.html" id="about-link">Salubridad</a>
+        </nav>
+    </header>
+    <div class="body">
+        <div class="form-container">
+            <h1>💗 Tu Opinión Importa 💗</h1>
+            <p class="subtitulo">
+                Califica nuestro producto y cuéntanos tu experiencia
+            </p>
+
+            <form action="#" method="post">
+                <!-- Puntuación -->
+                <div class="form-group">
+                    <label class="titulo">Puntuación:</label>
+                    <div class="stars">
+                        <input type="radio" id="estrella5" name="rating" value="5" required />
+                        <label for="estrella5" title="Excelente">★</label>
+                        <input type="radio" id="estrella4" name="rating" value="4" />
+                        <label for="estrella4" title="Muy bueno">★</label>
+                        <input type="radio" id="estrella3" name="rating" value="3" />
+                        <label for="estrella3" title="Bueno">★</label>
+                        <input type="radio" id="estrella2" name="rating" value="2" />
+                        <label for="estrella2" title="Regular">★</label>
+                        <input type="radio" id="estrella1" name="rating" value="1" />
+                        <label for="estrella1" title="Malo">★</label>
+                    </div>
+                </div>
+
+                <!-- Comentarios -->
+                <div class="form-group">
+                    <label for="comentarios" class="titulo">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"
+                        placeholder="Escribe tu opinión aquí..."></textarea>
+                </div>
+
+                <!-- Botón -->
+                <div class="form-group">
+                    <button type="submit">Enviar Opinión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  <footer class="footer">
+    <p>© Dulce Encanto - 2025</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dulce Encanto - Postres</title>
+  <link rel="shortcut icon" href="logotipo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">🍰 <strong>Dulce Encanto</strong></div>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="hola.html" id="about-link">Quiénes Somos</a>
+      <a href="rosa.html">Formulario</a>
+      <a href="vale.html" id="about-link">Salubridad</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <h1>Bienvenidos a <span class="accent">Dulce Encanto </span></h1>
+      <p><strong>Postres caseros <em style="text-decoration:underline">dulces</em>, cremosos y con mucho amor.❤</strong>
+      </p>
+      <img src="logotipo.png" alt="Tarta rosa" class="hero-img">
+    </section>
+
+    <!-- Tabla de postres -->
+    <section class="table-section">
+      <h2>Nuestros Postres</h2>
+      <table class="postres-table border-solid">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio por Porcion</th>
+            <th>Precio por Completo</th>
+            <th>Tipos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tres Leches</td>
+            <td>S/ 5.50</td>
+            <td>S/ 55</td>
+            <td>Esponjoso y húmedo</td>
+          </tr>
+          <tr class="border-dashed">
+            <td>Keke de Naranja</td>
+            <td>S/ 2.50</td>
+            <td>S/ 25</td>
+            <td>Frutal y suave</td>
+          </tr>
+          <tr class="border-dotted">
+            <td>Pie De Cereza</td>
+            <td>S/ 4.50</td>
+            <td>S/30 </td>
+            <td>Dulce y afrutado</td>
+          </tr>
+          <tr class="border-dashed">
+            <td>Brownies</td>
+            <td>S/ 3.50</td>
+            <td>S/ 22</td>
+            <td>Intenso y chocolatoso</td>
+          </tr>
+          <tr class="border-dotted">
+            <td>Cupcakes </td>
+            <td>S/ 4.50</td>
+            <td>S/ 25</td>
+            <td>Divertido y decorado</td>
+          </tr>
+          <tr class="border-dashed">
+            <td>Tiramisu</td>
+            <td>S/ 7.50</td>
+            <td>S/ 40</td>
+            <td>Cremoso y elegante</td>
+          </tr>
+          <tr class="border-dotted">
+            <td>Rollitos de Canela</td>
+            <td>S/ 4.00</td>
+            <td>S/ 24</td>
+            <td>Aromático y cálido</td>
+          </tr>
+          <tr class="border-dashed">
+            <td>Galletita de Gatito</td>
+            <td>S/ 3.00</td>
+            <td>S/ 12</td>
+            <td>Tierno y crujiente</td>
+          </tr>
+          <tr class="border-dotted">
+            <td>Pastel De Chocolate</td>
+            <td>S/ 4.50</td>
+            <td>S/ 55</td>
+            <td>Rico y goloso</td>
+          </tr>
+          <tr class="border-dashed">
+            <td>Quesillo </td>
+            <td>S/ 5.00</td>
+            <td>S/ 45</td>
+            <td>Suave y tradicional</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    
+    <section class="styles-demo">
+      <h2>Ejemplos de postres:</h2>
+
+    </section>
+
+    <section class="postres-grid">
+      <div class="postre-card">
+        <img src="tiramisu.jpg" alt="Postre 1">
+        <h3>Tiramisu</h3>
+      </div>
+      <div class="postre-card">
+        <img src="chocolate.jpg" alt="Postre 2">
+        <h3>Pastel de Chocolate</h3>
+      </div>
+      <div class="postre-card">
+        <img src="quesillo.jpg" alt="Postre 3">
+        <h3>Quesillo</h3>
+      </div>
+      <div class="postre-card">
+        <img src="tres leche.jpg" alt="Postre 4">
+        <h3>Tres Leches</h3>
+      </div>
+      <div class="postre-card">
+        <img src="cerezas.jpg" alt="Postre 4">
+        <h3>Pie De Cerezas</h3>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer class="footer">
+    <p>© <strong>Dulce Encanto</strong> - Hecho con ♥ </p>
+  </footer>
+
+  <!-- Scripts: reloj y mejoras -->
+  <script>
+    // Reloj en vivo
+    function actualizarReloj() {
+      const r = document.getElementById('reloj');
+      const ahora = new Date();
+      const hh = String(ahora.getHours()).padStart(2, '0');
+      const mm = String(ahora.getMinutes()).padStart(2, '0');
+      const ss = String(ahora.getSeconds()).padStart(2, '0');
+      r.textContent = hh + ':' + mm + ':' + ss;
+    }
+    setInterval(actualizarReloj, 1000);
+    actualizarReloj();
+
+    // Mejora: confirmar envío
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      // opcional: dejar que envíe, pero puedes descomentar para confirmar
+      // if (!confirm('¿Deseas enviar tus datos y visitar la página "Quién soy"?')) e.preventDefault();
+    });
+  </script>
+</body>
+
+</html>
