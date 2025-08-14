@@ -1,0 +1,67 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff5f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+h1 {
+    text-align: center;
+    color: #d86b8c;
+}
+
+.descripcion {
+    background-color: #ffeef2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.equipo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.miembro {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+   
+}
+
+
+
+.miembro img {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #ffd1dc;
+}
+
+.nombre {
+    font-weight: bold;
+    color: #d86b8c;
+    font-size: 15px;
+}
+
+.rol {
+    font-size: 15px;
+    color: #777;
+}

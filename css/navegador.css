@@ -1,0 +1,37 @@
+:root{
+  --rosado-1: #fff0f6;
+  --rosado-2: #ffd6e7;
+  --rosado-3: #ffb3d1;
+  --rosa-accent: #ff6fa3;
+  --text-dark: #3b2a2a;
+  --card-shadow: 0 6px 18px rgba(255,105,180,0.12);
+  --radius: 12px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+/* Reset básico */
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+/* Barra de navegación */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,111,160,0.15);
+}
+.logo{ font-size:1.1rem }
+.nav-links a{
+  margin-left:12px;
+  text-decoration:none;
+  color:var(--text-dark);
+  font-weight:600;
+}
+.nav-links a:hover{
+  color:var(--rosa-accent);
+}

@@ -1,0 +1,120 @@
+/* Fondo rosado degradado */
+.body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fbc2eb, #ffdde1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Contenedor central */
+.form-container {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0px 10px 30px rgba(255, 105, 180, 0.25);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Título y subtítulo */
+h1 {
+  color: #d63384;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los grupos */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.titulo {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #d63384;
+}
+
+/* Estrellas rosadas */
+.stars {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 6px;
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  font-size: 36px;
+  color: #ffc0cb;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #ff69b4;
+  transform: scale(1.2);
+}
+
+.stars input:checked ~ label {
+  color: #ff69b4;
+}
+
+/* Área de comentarios */
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f8a8d2;
+  border-radius: 10px;
+  background-color: #fff0f5;
+  font-size: 14px;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #ff80bf;
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(255, 128, 191, 0.4);
+}
+
+/* Botón degradado */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

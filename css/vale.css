@@ -1,0 +1,73 @@
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffe4ec;
+  color: #4d4d4d;
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(212, 106, 146, 0.2);
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #d46a92;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-top: 10px;
+}
+
+/* Sección de reglas */
+.reglas h2 {
+  font-size: 1.8rem;
+  color: #b84c74;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reglas ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.reglas li {
+  background-color: #f8b7cd;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-left: 6px solid #d46a92;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #4d2b38;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Pie de página */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #999;
+  font-size: 0.9rem;
+}

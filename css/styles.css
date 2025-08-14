@@ -1,0 +1,240 @@
+:root{
+  --rosado-1: #fff0f6;
+  --rosado-2: #ffd6e7;
+  --rosado-3: #ffb3d1;
+  --rosa-accent: #ff6fa3;
+  --text-dark: #3b2a2a;
+  --card-shadow: 0 7px 18px rgba(255,105,180,0.12);
+  --radius: 12px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Reset básico */
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background: linear-gradient(180deg,var(--rosado-1), var(--rosado-2));
+  color: var(--text-dark);
+  line-height:1.4;
+  padding-bottom:60px;
+}
+
+/* Barra de navegación */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,111,160,0.15);
+}
+.logo{ font-size:1.1rem }
+.nav-links a{
+  margin-left:12px;
+  text-decoration:none;
+  color:var(--text-dark);
+  font-weight:600;
+}
+.nav-links a:hover{
+  color:var(--rosa-accent);
+}
+
+/* Contenedor principal */
+.container{
+  max-width:1100px;
+  margin:18px auto;
+  padding:18px;
+}
+
+/* Hero principal */
+.hero{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin-bottom:16px;
+}
+.hero h1{
+  font-size:2rem;
+  margin-bottom:6px;
+}
+.accent{
+  color:var(--rosa-accent);
+}
+.hero-img{
+  width:220px;
+  height:auto;
+  object-fit:cover;
+  border-radius: 100%;
+  box-shadow: var(--card-shadow);
+   border:6px solid rgba(255,255,255,0.6); 
+}
+
+/* Cartas y contenedores */
+.clock-card, .audio-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+  padding:12px;
+  border-radius:10px;
+  box-shadow: var(--card-shadow);
+  margin:12px 0;
+}
+.reloj{
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--rosa-accent);
+}
+
+/* Tablas generales */
+table{
+  border-collapse:collapse;
+}
+.postres-table, .info-table{
+  width:100%;
+  background:rgba(255,255,255,0.85);
+  border-radius:8px;
+  overflow:hidden;
+}
+.postres-table th, .postres-table td,
+.info-table th, .info-table td{
+  padding:10px;
+  text-align:left;
+  border-bottom:1px solid rgba(200,120,160,0.15);
+}
+.info-table th{
+  background:rgba(255,111,160,0.06);
+}
+
+/* Bordes */
+.border-solid{ border:3px solid rgba(255,111,160,0.25); }
+.border-dashed{ border:3px dashed rgba(255,111,160,0.25); }
+.border-dotted{ border:3px dotted rgba(255,111,160,0.25); }
+
+/* Cajas de ejemplo */
+.examples{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.box{
+  padding:12px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.75);
+  box-shadow: var(--card-shadow);
+}
+.size-large{ font-size:1.2rem }
+.size-medium{ font-size:1rem }
+.size-small{ font-size:0.85rem }
+
+/* Formularios */
+form.contact-form{
+  display:grid;
+  gap:8px;
+  background: rgba(255,255,255,0.85);
+  padding:14px;
+  border-radius:10px;
+  box-shadow: var(--card-shadow);
+}
+form input, form textarea{
+  padding:8px;
+  border-radius:6px;
+  border:1px solid rgba(200,140,160,0.25);
+  font-size:1rem;
+}
+label{
+  font-weight:600;
+  font-size:0.95rem;
+}
+.form-actions{
+  display:flex;
+  gap:10px;
+  margin-top:6px;
+}
+.btn{
+  background:var(--rosa-accent);
+  color:white;
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+}
+.btn-ghost{
+  background:transparent;
+  color:var(--text-dark);
+  border:1px solid rgba(200,140,160,0.25);
+}
+.btn:hover{
+  opacity:0.9;
+}
+
+/* Links externos */
+.links-section a{
+  color:var(--rosa-accent);
+  text-decoration:underline;
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  padding:18px;
+  margin-top:22px;
+  opacity:0.9;
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .hero{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero-img{
+    width:100%;
+    height:200px;
+  }
+  .nav-links{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+}
+/* Cuadros de postres animados */
+.postres-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap:16px;
+  margin-top:20px;
+}
+
+.postre-card{
+  background: rgba(255,255,255,0.85);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--card-shadow);
+  cursor:pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postre-card img{
+  width:100%;
+  height:130px;
+  object-fit:cover;
+  display:block;
+}
+
+.postre-card h3{
+  padding:10px;
+  text-align:center;
+  color:var(--rosa-accent);
+}
+
+.postre-card:hover{
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 22px rgba(255,105,180,0.25);
+}
+.a{font-size: 50px;}
+
