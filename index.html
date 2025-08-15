@@ -145,26 +145,6 @@
     <p>© <strong>Dulce Encanto</strong> - Hecho con ♥ </p>
   </footer>
 
-  <!-- Scripts: reloj y mejoras -->
-  <script>
-    // Reloj en vivo
-    function actualizarReloj() {
-      const r = document.getElementById('reloj');
-      const ahora = new Date();
-      const hh = String(ahora.getHours()).padStart(2, '0');
-      const mm = String(ahora.getMinutes()).padStart(2, '0');
-      const ss = String(ahora.getSeconds()).padStart(2, '0');
-      r.textContent = hh + ':' + mm + ':' + ss;
-    }
-    setInterval(actualizarReloj, 1000);
-    actualizarReloj();
-
-    // Mejora: confirmar envío
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      // opcional: dejar que envíe, pero puedes descomentar para confirmar
-      // if (!confirm('¿Deseas enviar tus datos y visitar la página "Quién soy"?')) e.preventDefault();
-    });
-  </script>
 </body>
 
 </html>
