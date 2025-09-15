@@ -1,2 +1,1 @@
-
-let hola = alert("bienvenido")
+alert("bienvenido")
