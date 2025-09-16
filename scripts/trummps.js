@@ -15,7 +15,7 @@ form.addEventListener("submit", (e) => {
   // Ocultar mensaje después de 3 segundos
   setTimeout(() => {
     mensajeExito.style.display = "none";
-  }, 3000);
+  }, 3000);z
 });
 
 // Animación de "pop" al seleccionar estrellas

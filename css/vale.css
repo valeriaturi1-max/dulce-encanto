@@ -13,6 +13,7 @@ body {
   color: #4d4d4d;
   line-height: 1.6;
   padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ---------------------------
@@ -25,7 +26,7 @@ body {
   padding: 40px 30px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(212, 106, 146, 0.25);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .container:hover {
@@ -79,10 +80,62 @@ header h1 {
   color: #4d2b38;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .reglas li:hover {
   background-color: #f8b7cd;
+}
+
+.reglas li.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}
+
+/* ---------------------------
+   Botón Subir
+---------------------------- */
+#btnSubir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  background: #d04679;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  display: none;
+  transition: background 0.3s ease;
+}
+
+#btnSubir:hover {
+  background: #b23c65;
+}
+
+/* ---------------------------
+   Botón Modo Oscuro
+---------------------------- */
+#btnModo {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#btnModo:hover {
+  background: #666;
 }
 
 /* ---------------------------
@@ -95,6 +148,38 @@ footer {
   font-size: 0.9rem;
   padding: 10px 0;
   border-top: 1px solid #eee;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------------------
+   Modo Oscuro
+---------------------------- */
+body.oscuro {
+  background-color: #222;
+  color: #f1f1f1;
+}
+
+body.oscuro .container {
+  background-color: #333;
+}
+
+body.oscuro header h1 {
+  color: #ff9dcf;
+}
+
+body.oscuro .subtitulo {
+  color: #ddd;
+}
+
+body.oscuro .reglas li {
+  background-color: #444;
+  color: #f1f1f1;
+  border-left: 6px solid #ff80aa;
+}
+
+body.oscuro footer {
+  color: #ccc;
+  border-top-color: #555;
 }
 
 /* ---------------------------
@@ -122,3 +207,4 @@ footer {
     padding: 14px 16px;
   }
 }
+
