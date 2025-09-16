@@ -3,34 +3,33 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacto - Dulce Encanto</title>
-    <link rel="shortcut icon" href="logotipo.png" type="image/x-icon">
+
+  <link rel="shortcut icon" href="logotipo.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/contacto.css">
 </head>
 
 <body>
   <header class="navbar">
-    <div class="logo">🍰 <strong>Dulce Encanto</strong></div>
-    <nav class="nav-links">
+    <div class="logo" aria-label="Logotipo de Dulce Encanto">🍰 <strong>Dulce Encanto</strong></div>
+    <nav class="nav-links" aria-label="Navegación principal">
       <a href="index.html">Inicio</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="hola.html" id="about-link">Quiénes Somos</a>
+      <a href="contacto.html" aria-current="page">Contacto</a>
+      <a href="hola.html">Quiénes Somos</a>
       <a href="rosa.html">Formulario</a>
-      <a href="vale.html" id="about-link">Salubridad</a>
+      <a href="vale.html">Salubridad</a>
     </nav>
   </header>
-
+ <body>
   <main class="container">
     <h1>Contacto</h1>
-    <p>
-      Si deseas encargar un postre o solicitar más información, contáctanos:
-    </p>
+    <p>Si deseas encargar un postre o solicitar más información, contáctanos:</p>
 
-    <section class="styles-demo">
+    <section class="styles-demo" aria-label="Información de contacto">
       <div class="box border-solid size-medium">
         <strong>Teléfono:</strong> <u>+51 987 654 321</u>
       </div>
@@ -42,25 +41,31 @@
       </div>
     </section>
 
-    <section class="links-section">
+    <section class="links-section" aria-label="Redes sociales">
       <h2>Síguenos en redes</h2>
-      <ul>
+      <ul class="redes-sociales">
         <li>
-          <a class="a" href="#"><i class="fa-brands fa-square-facebook fa-beat"></i></a>
+          <a class="a" href="#" aria-label="Facebook">
+            <i class="fa-brands fa-square-facebook fa-beat"></i>
+          </a>
         </li>
         <li>
-          <a class="a" href="#"><i class="fa-brands fa-square-instagram fa-beat"></i></a>
+          <a class="a" href="#" aria-label="Instagram">
+            <i class="fa-brands fa-square-instagram fa-beat"></i>
+          </a>
         </li>
         <li>
-          <a class="a" href="#"><i class="fa-brands fa-square-whatsapp fa-beat"></i></a>
+          <a class="a" href="#" aria-label="WhatsApp">
+            <i class="fa-brands fa-square-whatsapp fa-beat"></i>
+          </a>
         </li>
       </ul>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="scripts/scrp.js"></script>
+  </body>
 
   <footer class="footer">
-    <p>© Dulce Encanto - Contacto</p>
+    <p>&copy; 2025 Dulce Encanto - Todos los derechos reservados.</p>
   </footer>
-</body>
-
-</html>
