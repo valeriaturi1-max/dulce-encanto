@@ -1,1 +1,1 @@
-alert("Bienvenido a la pagina de Dulce encanto");
+Swal.fire("Bienvenido a la pagina de Dulce encanto");

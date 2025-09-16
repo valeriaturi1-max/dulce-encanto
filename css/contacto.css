@@ -1,0 +1,97 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f4;
+  color: #333;
+}
+
+/* Encabezado / Navbar */
+.navbar {
+  background-color: #ffb6c1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #e60073;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Sección de contacto */
+.styles-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.box {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #ffe6ec;
+}
+
+.border-solid {
+  border: 2px solid #e60073;
+}
+
+.border-dashed {
+  border: 2px dashed #e60073;
+}
+
+.border-dotted {
+  border: 2px dotted #e60073;
+}
+
+.size-medium {
+  font-size: 1.1rem;
+}
+
+/* Redes sociales */
+.redes-sociales {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.redes-sociales a {
+  font-size: 2rem;
+  color: #e60073;
+  transition: transform 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+  background-color: #ffb6c1;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: #333;
+}
