@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     valentina: "Valentina es experta en técnicas modernas de repostería y siempre está innovando con nuevas recetas deliciosas."
   };
 
-  const miembros = document.querySelectorAll(".miembro"); 
+  const miembros = document.querySelectorAll(".miembro");
 
   miembros.forEach((miembro) => {
     miembro.addEventListener("click", () => {
