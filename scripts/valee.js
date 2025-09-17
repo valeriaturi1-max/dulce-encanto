@@ -1,7 +1,3 @@
-// ==========================
-// Script Dulce Encanto
-// ==========================
-
 document.addEventListener("DOMContentLoaded", () => {
   /* -------------------------
      Botón Subir
@@ -17,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("scroll", toggleBtnSubir);
-  toggleBtnSubir(); // Inicial
+  toggleBtnSubir();
 
   /* -------------------------
      Animación de Reglas
@@ -95,6 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     item.addEventListener("mouseleave", () => {
       item.style.transform = "scale(1)";
+    });
+  });
+
+  /* -------------------------
+     Mostrar / Ocultar Info
+  ------------------------- */
+  const flechas = document.querySelectorAll(".flecha");
+  flechas.forEach((flecha) => {
+    flecha.addEventListener("click", () => {
+      const info = flecha.nextElementSibling;
+      if (info.style.display === "block") {
+        info.style.display = "none";
+      } else {
+        info.style.display = "block";
+      }
     });
   });
 });
