@@ -276,3 +276,16 @@ button[type="submit"]:hover {
   0%   { opacity: 1; transform: scale(1) translateY(0); }
   100% { opacity: 0; transform: scale(2) translateY(-40px); }
 }
+body.oscuro {
+  background: #1c1c1c !important;
+  color: #f1f1f1;
+}
+
+body.oscuro .navbar,
+body.oscuro .form-container,
+body.oscuro .opiniones,
+body.oscuro .footer {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
