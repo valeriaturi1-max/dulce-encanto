@@ -1,33 +1,30 @@
-/* 🌸 PALETA ROSADITA PASTEL */
+/* 🌸 PALETA ROSADA PASTEL */
 :root {
-  --pink-light: #ffe6f0;
-  --pink: #ffb8db;
-  --pink-strong: #ff6aa8;
-  --pink-glow: #ff91c9;
-  --white: #ffffff;
-  --text: #4a4a4a;
-  --radius: 20px;
-  --shadow: 0 10px 25px rgba(255, 100, 180, 0.2);
+  --rosa-claro: #ffeaf4;
+  --rosa: #ffc2e2;
+  --rosa-vivo: #ff8ac2;
+  --rosa-fuerte: #ff5fa6;
+  --blanco: #ffffff;
+  --texto: #4a4a4a;
+  --sombra: 0 8px 25px rgba(255, 120, 180, 0.2);
+  --radio: 20px;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, var(--pink-light), var(--pink), var(--pink-strong));
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, var(--rosa-claro), var(--rosa), var(--rosa-vivo));
   background-size: 300% 300%;
   animation: fondo 10s ease infinite;
-  color: var(--text);
-  line-height: 1.6;
-  padding-top: 80px;
+  color: var(--texto);
+  text-align: center;
+  padding-top: 90px;
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 @keyframes fondo {
@@ -36,78 +33,82 @@ body {
   100% {background-position: 0% 50%;}
 }
 
-/* 🌟 Navbar */
+/* 🌟 NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
-  width: 90%;
-  max-width: 1000px;
-  background: rgba(255,255,255,0.7);
+  width: 100%;
+  background: rgba(255,255,255,0.5);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
-  gap: 25px;
-  padding: 15px 25px;
-  border-radius: 0 0 20px 20px;
-  box-shadow: var(--shadow);
+  gap: 30px;
+  padding: 15px 30px;
+  border-radius: 0 0 25px 25px;
+  box-shadow: var(--sombra);
   z-index: 1000;
 }
+.navbar .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--rosa-fuerte);
+  margin-right: 40px;
+}
 .navbar a {
-  color: var(--text);
   text-decoration: none;
+  color: var(--texto);
   font-weight: 600;
   padding: 10px 16px;
   border-radius: 12px;
   transition: all .3s ease;
 }
 .navbar a:hover {
-  background: var(--pink-strong);
-  color: white;
+  background: var(--rosa-vivo);
+  color: var(--blanco);
   transform: scale(1.1);
 }
 
-/* 🎂 Sección centrada */
+/* 🍰 SECCIONES */
 section {
+  max-width: 900px;
+  margin: 80px auto 40px;
+  padding: 50px 20px;
   text-align: center;
-  padding: 70px 20px;
-  max-width: 800px;
-  width: 100%;
-  margin: auto;
 }
 section h2 {
-  font-size: 2.2rem;
-  color: var(--pink-strong);
+  color: var(--rosa-fuerte);
+  font-size: 2.4rem;
   margin-bottom: 20px;
-  text-shadow: 0 2px 10px rgba(255,105,180,0.25);
+  text-shadow: 0 2px 10px rgba(255,105,180,0.3);
 }
 
-/* ✨ Cards */
+/* 🌟 TARJETAS BENEFICIOS */
 .beneficios {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
   gap: 20px;
-  justify-content: center;
+  margin-top: 20px;
 }
 .beneficios li {
   list-style: none;
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: var(--blanco);
   padding: 20px;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
   transition: transform .4s ease, box-shadow .4s ease;
 }
 .beneficios li:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(255,105,180,0.3);
+  transform: translateY(-10px) rotate(-1deg) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255,120,180,0.3);
 }
 
-/* 📝 Opiniones */
+/* 💬 OPINIONES */
 .opinion {
-  background: var(--white);
+  background: var(--blanco);
   margin: 20px auto;
   padding: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
   max-width: 500px;
   transition: transform .4s ease;
 }
@@ -115,90 +116,111 @@ section h2 {
   transform: scale(1.03);
 }
 
-/* 💖 Formulario centrado */
+/* 💖 FORMULARIO */
 .form-container {
-  background: var(--white);
+  background: var(--blanco);
   padding: 40px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
   max-width: 600px;
   margin: 60px auto;
   text-align: center;
+  animation: flotar 4s ease-in-out infinite;
 }
+
+@keyframes flotar {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-8px);}
+  100% {transform: translateY(0);}
+}
+
+.form-container h1 {
+  color: var(--rosa-fuerte);
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.stars input {
+  display: none;
+}
+
 .stars label {
-  font-size: 2rem;
+  font-size: 2.2rem;
   cursor: pointer;
-  color: var(--pink);
+  color: var(--rosa);
   transition: transform .2s, color .2s;
 }
+
 .stars label:hover,
 .stars input:checked ~ label {
-  color: var(--pink-strong);
+  color: var(--rosa-fuerte);
   transform: scale(1.3) rotate(-10deg);
 }
+
 textarea {
   width: 100%;
   padding: 14px;
-  border-radius: var(--radius);
-  border: 1px solid #ffc6de;
-  margin-top: 20px;
+  border-radius: var(--radio);
+  border: 1px solid #ddd;
+  margin-top: 15px;
+  font-size: 1rem;
 }
+
 button[type=submit] {
   width: 100%;
-  background: var(--pink-strong);
+  background: var(--rosa-fuerte);
   color: white;
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--radio);
   padding: 14px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   margin-top: 20px;
   transition: transform .2s ease, background .3s ease;
 }
 button[type=submit]:hover {
-  transform: translateY(-3px);
-  background: var(--pink-glow);
+  transform: translateY(-3px) scale(1.05);
+  background: var(--rosa-vivo);
 }
 
-/* 🌗 Modo oscuro */
-body.oscuro {
-  background: linear-gradient(120deg,#1a1a1a,#2b2b2b);
-  color: #f1f1f1;
+/* ✨ ANIMACIÓN DE APARICIÓN */
+section, .form-container, .opinion {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .8s ease;
 }
-body.oscuro .form-container,
-body.oscuro .opinion,
-body.oscuro .beneficios li {
-  background: rgba(255,255,255,0.05);
-  color: #fff;
-  backdrop-filter: blur(5px);
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* 📱 Responsive */
+/* 📱 RESPONSIVE */
 @media (max-width: 600px){
   .navbar {
     flex-wrap: wrap;
     gap: 10px;
   }
   section h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+  }
+  .stars label {
+    font-size: 1.7rem;
   }
 }
-
-/* 🌟 Partículas */
+/* ✨ Partículas */
 .particle {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.7;
   animation: floatUp 1s linear forwards;
-  z-index: 2000;
 }
 @keyframes floatUp {
-  from {transform: translateY(0); opacity: 0.7;}
-  to {transform: translateY(-60px); opacity: 0;}
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-60px); opacity: 0; }
 }
 
 /* 🎉 Confeti */
@@ -206,23 +228,55 @@ body.oscuro .beneficios li {
   position: fixed;
   width: 8px;
   height: 8px;
+  top: -10px;
   border-radius: 2px;
   animation: caer 1.5s linear forwards;
-  top: -10px;
   z-index: 2000;
 }
 @keyframes caer {
-  from {transform: translateY(0) rotate(0);}
-  to {transform: translateY(100vh) rotate(720deg); opacity: 0;}
+  from { transform: translateY(0) rotate(0); }
+  to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }
 
-/* ✨ Aparición suave */
-.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+/* ⬆ Botón subir */
+#btnTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--rosa-fuerte);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 14px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: var(--sombra);
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
-section, .form-container, .opinion {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+#btnTop:hover {
+  transform: scale(1.1);
+}
+
+/* ☀️ / 🌙 Botón modo */
+#btnModo {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: var(--rosa-fuerte);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 16px;
+  font-size: 1.4rem;
+  box-shadow: var(--sombra);
+  cursor: pointer;
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
+  50% {box-shadow: 0 0 30px rgba(255,105,180,0.6);}
+  100% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
 }
