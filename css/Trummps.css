@@ -1,7 +1,3 @@
-/* =======================
-   Estilo Pastel Rosado Responsive
-   ======================= */
-
 :root {
   --pink-50: #fff5fb;
   --pink-100: #ffeef6;
@@ -27,15 +23,15 @@
 
 body {
   font-family: "Segoe UI", system-ui, sans-serif;
-  background: linear-gradient(180deg, var(--pink-50) 0%, var(--pink-100) 100%);
+  background: linear-gradient(120deg, var(--pink-50), var(--pink-100), var(--pink-200));
+  background-size: 600% 600%;
   color: var(--text);
   line-height: 1.5;
-  padding-top: 70px; /* para navbar fija */
+  padding-top: 70px;
+  transition: background .4s ease, color .4s ease;
 }
 
-/* =======================
-   Navbar
-   ======================= */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -72,44 +68,18 @@ body {
   background: var(--pink-300);
 }
 
-/* =======================
-   Sección producto
-   ======================= */
+/* Sección producto */
 .producto {
   text-align: center;
   padding: var(--space-lg) var(--space-md);
   background: var(--pink-50);
 }
 
-.producto h2 {
-  font-size: 1.8rem;
-  margin-bottom: var(--space-sm);
-}
-
-.producto p {
-  max-width: 600px;
-  margin: 0 auto var(--space-md) auto;
-}
-
-.beneficios {
-  list-style: none;
-  display: grid;
-  gap: var(--space-sm);
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* =======================
-   Opiniones
-   ======================= */
+/* Opiniones */
 .opiniones {
   background: var(--pink-100);
   padding: var(--space-lg) var(--space-md);
   text-align: center;
-}
-
-.opiniones h2 {
-  margin-bottom: var(--space-md);
 }
 
 .opinion {
@@ -121,15 +91,7 @@ body {
   box-shadow: 0 4px 10px rgba(200, 100, 140, 0.08);
 }
 
-/* =======================
-   Formulario
-   ======================= */
-.body {
-  padding: var(--space-lg) var(--space-md);
-  display: flex;
-  justify-content: center;
-}
-
+/* Formulario */
 .form-container {
   background: var(--white);
   padding: var(--space-lg) var(--space-md);
@@ -137,27 +99,12 @@ body {
   box-shadow: 0 6px 20px rgba(220, 130, 170, 0.1);
   max-width: 600px;
   width: 100%;
+  margin: var(--space-lg) auto;
 }
 
 .form-container h1 {
   text-align: center;
   margin-bottom: var(--space-sm);
-}
-
-.subtitulo {
-  text-align: center;
-  color: var(--muted);
-  margin-bottom: var(--space-md);
-}
-
-.form-group {
-  margin-bottom: var(--space-md);
-}
-
-.titulo {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
 }
 
 .stars {
@@ -174,12 +121,14 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--pink-300);
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .stars input:checked ~ label,
 .stars label:hover,
 .stars label:hover ~ label {
   color: var(--pink-500);
+  transform: scale(1.2) rotate(-10deg);
 }
 
 textarea {
@@ -200,6 +149,7 @@ button[type="submit"] {
   font-size: 1rem;
   cursor: pointer;
   font-weight: 600;
+  transition: background .3s ease;
 }
 
 button[type="submit"]:hover {
@@ -207,14 +157,17 @@ button[type="submit"]:hover {
 }
 
 .mensaje-exito {
+  background: #c8f7c5;
+  color: #2e7d32;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-weight: 600;
+  display: none;
   text-align: center;
-  color: green;
-  margin-top: var(--space-md);
 }
 
-/* =======================
-   Botón subir
-   ======================= */
+/* Botón subir */
 #btnSubir {
   position: fixed;
   bottom: 20px;
@@ -233,9 +186,32 @@ button[type="submit"]:hover {
   background: var(--pink-600);
 }
 
-/* =======================
-   Footer
-   ======================= */
+/* Botones flotantes de JS */
+#btnModo, #btnMusica {
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Toasts de JS */
+.toast {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #ffb8db;
+  color: #4a004a;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Footer */
 .footer {
   text-align: center;
   padding: var(--space-md);
@@ -244,9 +220,7 @@ button[type="submit"]:hover {
   margin-top: var(--space-lg);
 }
 
-/* =======================
-   Responsive
-   ======================= */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     justify-content: center;
@@ -256,26 +230,8 @@ button[type="submit"]:hover {
     padding: var(--space-md);
   }
 }
-/* Efectos visuales interactivos */
-.stars label {
-  transition: transform 0.2s ease, color 0.2s ease;
-  cursor: pointer;
-}
 
-.mensaje-exito {
-  background: #c8f7c5;
-  color: #2e7d32;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 15px;
-  font-weight: 600;
-  display: none;
-  text-align: center;
-}
-@keyframes sparkle {
-  0%   { opacity: 1; transform: scale(1) translateY(0); }
-  100% { opacity: 0; transform: scale(2) translateY(-40px); }
-}
+/* Modo oscuro */
 body.oscuro {
   background: #1c1c1c !important;
   color: #f1f1f1;
