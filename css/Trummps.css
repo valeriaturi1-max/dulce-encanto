@@ -9,10 +9,11 @@
   --text: #333;
   --muted: #666;
   --white: #fff;
-  --radius: 12px;
+  --radius: 14px;
   --space-sm: 12px;
   --space-md: 20px;
   --space-lg: 32px;
+  --max-width: 1200px;
 }
 
 * {
@@ -25,17 +26,22 @@ body {
   font-family: "Segoe UI", system-ui, sans-serif;
   background: linear-gradient(120deg, var(--pink-50), var(--pink-100), var(--pink-200));
   background-size: 600% 600%;
+  animation: fondoPastel 10s ease infinite alternate;
   color: var(--text);
   line-height: 1.5;
   padding-top: 70px;
   transition: background .4s ease, color .4s ease;
 }
 
-/* Navbar */
+@keyframes fondoPastel {
+  0% { background-position: 0% 50%;}
+  100% { background-position: 100% 50%;}
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   background: var(--pink-200);
   display: flex;
@@ -44,10 +50,12 @@ body {
   padding: var(--space-sm) var(--space-md);
   box-shadow: 0 4px 10px rgba(200, 100, 140, 0.1);
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .nav-links {
@@ -62,28 +70,47 @@ body {
   font-weight: 600;
   padding: 6px 10px;
   border-radius: 8px;
+  transition: background .3s ease;
 }
 
 .nav-links a:hover {
   background: var(--pink-300);
 }
 
-/* Sección producto */
-.producto {
-  text-align: center;
-  padding: var(--space-lg) var(--space-md);
-  background: var(--pink-50);
+/* ===== SECCIONES ===== */
+section {
+  max-width: var(--max-width);
+  margin: auto;
+  width: 92%;
+  animation: aparecer 0.7s ease;
 }
 
-/* Opiniones */
-.opiniones {
-  background: var(--pink-100);
-  padding: var(--space-lg) var(--space-md);
-  text-align: center;
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(15px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
-.opinion {
+.producto,
+.opiniones,
+.form-container {
   background: var(--white);
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(220, 130, 170, 0.1);
+  margin-top: var(--space-lg);
+}
+
+.producto h2,
+.opiniones h2,
+.form-container h1 {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+  color: var(--pink-500);
+}
+
+/* ===== OPINIONES ===== */
+.opinion {
+  background: var(--pink-50);
   margin: 10px auto;
   max-width: 500px;
   padding: var(--space-sm);
@@ -91,22 +118,7 @@ body {
   box-shadow: 0 4px 10px rgba(200, 100, 140, 0.08);
 }
 
-/* Formulario */
-.form-container {
-  background: var(--white);
-  padding: var(--space-lg) var(--space-md);
-  border-radius: var(--radius);
-  box-shadow: 0 6px 20px rgba(220, 130, 170, 0.1);
-  max-width: 600px;
-  width: 100%;
-  margin: var(--space-lg) auto;
-}
-
-.form-container h1 {
-  text-align: center;
-  margin-bottom: var(--space-sm);
-}
-
+/* ===== FORMULARIO ===== */
 .stars {
   display: flex;
   gap: 5px;
@@ -118,7 +130,7 @@ body {
 }
 
 .stars label {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
   color: var(--pink-300);
   transition: transform 0.2s ease, color 0.2s ease;
@@ -133,10 +145,11 @@ body {
 
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--radius);
   resize: vertical;
+  margin-top: var(--space-sm);
 }
 
 button[type="submit"] {
@@ -145,15 +158,16 @@ button[type="submit"] {
   color: var(--white);
   border: none;
   border-radius: var(--radius);
-  padding: 12px;
+  padding: 14px;
   font-size: 1rem;
   cursor: pointer;
   font-weight: 600;
-  transition: background .3s ease;
+  transition: background .3s ease, transform .2s ease;
 }
 
 button[type="submit"]:hover {
   background: var(--pink-600);
+  transform: scale(1.05);
 }
 
 .mensaje-exito {
@@ -167,7 +181,16 @@ button[type="submit"]:hover {
   text-align: center;
 }
 
-/* Botón subir */
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: var(--space-md);
+  background: var(--pink-200);
+  color: var(--text);
+  margin-top: var(--space-lg);
+}
+
+/* ===== BOTONES FLOTANTES ===== */
 #btnSubir {
   position: fixed;
   bottom: 20px;
@@ -181,22 +204,12 @@ button[type="submit"]:hover {
   cursor: pointer;
   display: none;
   box-shadow: 0 4px 12px rgba(200, 100, 140, 0.25);
+  z-index: 1000;
 }
 #btnSubir:hover {
   background: var(--pink-600);
 }
 
-/* Botones flotantes de JS */
-#btnModo, #btnMusica {
-  border-radius: 50%;
-  padding: 10px;
-  border: none;
-  background: #fff;
-  cursor: pointer;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-}
-
-/* Toasts de JS */
 .toast {
   position: fixed;
   bottom: 80px;
@@ -211,37 +224,26 @@ button[type="submit"]:hover {
   transition: opacity .4s ease, transform .4s ease;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: var(--space-md);
-  background: var(--pink-200);
-  color: var(--text);
-  margin-top: var(--space-lg);
-}
-
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
   .nav-links {
     justify-content: center;
     flex-wrap: wrap;
   }
-  .form-container {
+  body {
+    padding-top: 110px; /* por navbar más alta */
+  }
+  .form-container,
+  .producto,
+  .opiniones {
     padding: var(--space-md);
   }
-}
-
-/* Modo oscuro */
-body.oscuro {
-  background: #1c1c1c !important;
-  color: #f1f1f1;
-}
-
-body.oscuro .navbar,
-body.oscuro .form-container,
-body.oscuro .opiniones,
-body.oscuro .footer {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(4px);
-  border-radius: 10px;
+  .stars label {
+    font-size: 1.3rem;
+  }
 }
