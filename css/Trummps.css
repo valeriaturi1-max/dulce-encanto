@@ -1,120 +1,202 @@
+/* 🎨 PALETA PASTEL VIBRANTE */
 :root {
-  --rosa: #ffb8db;
-  --rosaFuerte: #ff6aa8;
-  --blanco: #fff;
-  --gris: #555;
-  --sombra: 0 6px 14px rgba(255,105,180,.25);
+  --pink: #ffb8db;
+  --pink-strong: #ff6aa8;
+  --purple: #cfa9ff;
+  --yellow: #fff6b7;
+  --white: #ffffff;
+  --text: #4a4a4a;
+  --radius: 18px;
+  --shadow: 0 10px 25px rgba(255, 100, 180, 0.15);
 }
 
-* {margin:0;padding:0;box-sizing:border-box;}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #fff5fb, #ffeef6, #ffd6ea);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, var(--pink), var(--purple), var(--yellow));
   background-size: 300% 300%;
   animation: fondo 10s ease infinite;
-  color: var(--gris);
+  color: var(--text);
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 90px;
-  text-align: center;
-  transition: background .5s, color .5s;
+  padding-top: 80px;
+  overflow-x: hidden;
 }
+
 @keyframes fondo {
-  0%,100%{background-position:0% 50%}
-  50%{background-position:100% 50%}
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
-/* NAVBAR */
+/* 🌟 Navbar */
 .navbar {
-  position: fixed; top:0; left:0; width:100%;
-  display: flex; justify-content:center; gap:20px;
-  background: var(--rosa);
-  padding: 16px; box-shadow: var(--sombra); z-index:1000;
-}
-.nav-links a {
-  color:white; text-decoration:none; font-weight:600;
-  padding: 6px 10px; border-radius: 8px;
-  transition: background .3s;
-}
-.nav-links a:hover { background: var(--rosaFuerte); }
-
-/* BLOQUES */
-section, .form-container, .opinion {
-  max-width: 600px; width: 90%;
-  background: var(--blanco);
-  margin: 40px auto; padding: 30px;
-  border-radius: 18px; box-shadow: var(--sombra);
-  opacity: 0; transform: translateY(40px) scale(.9);
-  transition: opacity .8s, transform .8s;
-}
-.visible { opacity:1; transform: translateY(0) scale(1); }
-
-.opinion:hover { transform: scale(1.05) rotate(-1deg); }
-
-/* FORMULARIO */
-.stars input{display:none;}
-.stars label{
-  font-size:2rem;color:var(--rosa);
-  cursor:pointer;transition:transform .2s;
-}
-.stars label:hover{transform:scale(1.3) rotate(-10deg);}
-
-button {
-  width:100%; padding:14px; margin-top:10px;
-  background: var(--rosaFuerte); color:white; font-weight:bold;
-  border:none; border-radius:12px;
-  box-shadow: var(--sombra); cursor:pointer;
-  transition: transform .3s;
-}
-button:hover{transform:scale(1.05)}
-
-/* BOTONES FLOTANTES */
-#btnModo, #btnTop {
-  position: fixed; right: 20px;
-  border:none; border-radius:50%;
-  padding:14px; color:white; font-size:1.2rem;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow: var(--sombra); z-index: 1000; cursor: pointer;
-}
-#btnModo{bottom:90px;background:var(--rosa);animation:pulse 2s infinite;}
-#btnTop{bottom:20px;background:var(--rosaFuerte);display:none;}
-@keyframes pulse {
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.15)}
-}
-
-/* OSCURO */
-body.oscuro {
-  background: linear-gradient(135deg, #1a1a1a,#2a2a2a);
-  color:#f1f1f1;
-}
-body.oscuro section,
-body.oscuro .opinion {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(6px);
-  color: #eee;
-}
-
-/* PARTÍCULAS */
-.particle {
   position: fixed;
-  width: 8px; height: 8px;
-  background: radial-gradient(circle, #ffb8db 0%, #ff6aa8 100%);
-  border-radius: 50%;
-  opacity: 0.8;
-  pointer-events: none;
-  animation: float 4s linear infinite;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: var(--shadow);
+  z-index: 1000;
 }
-@keyframes float {
-  0%{transform:translateY(0) scale(1);opacity:.8;}
-  50%{transform:translateY(-50px) scale(1.2);opacity:1;}
-  100%{transform:translateY(-100px) scale(.7);opacity:0;}
+.navbar a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 12px;
+  transition: all .3s ease;
+}
+.navbar a:hover {
+  background: var(--pink-strong);
+  color: white;
+  transform: scale(1.1);
 }
 
-/* RESPONSIVE */
-@media (max-width:600px){
-  .navbar{flex-wrap:wrap;gap:10px;}
+/* 🎂 Sección centrada */
+section {
+  text-align: center;
+  padding: 70px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+section h2 {
+  font-size: 2.2rem;
+  color: var(--pink-strong);
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(255,105,180,0.2);
+}
+
+/* ✨ Cards de beneficios */
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 20px;
+}
+.beneficios li {
+  list-style: none;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+.beneficios li:hover {
+  transform: translateY(-10px) rotate(-1deg) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255,100,180,0.25);
+}
+
+/* 📝 Opiniones */
+.opinion {
+  background: var(--white);
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  transition: transform .4s ease;
+}
+.opinion:hover {
+  transform: scale(1.03);
+}
+
+/* 💖 Formulario */
+.form-container {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+}
+.stars label {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--pink);
+  transition: transform .2s, color .2s;
+}
+.stars label:hover,
+.stars input:checked ~ label {
+  color: var(--pink-strong);
+  transform: scale(1.3) rotate(-10deg);
+}
+textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+button[type=submit] {
+  width: 100%;
+  background: var(--pink-strong);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform .2s ease, background .3s ease;
+}
+button[type=submit]:hover {
+  transform: translateY(-3px);
+  background: #ff3f90;
+}
+
+/* ☀️ / 🌙 Botón modo */
+#btnModo {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: var(--pink-strong);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 16px;
+  font-size: 1.4rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
+  50% {box-shadow: 0 0 30px rgba(255,105,180,0.6);}
+  100% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
+}
+
+/* 🌗 Modo oscuro */
+body.oscuro {
+  background: linear-gradient(120deg,#1a1a1a,#2b2b2b);
+  color: #f1f1f1;
+}
+body.oscuro .form-container,
+body.oscuro .opinion,
+body.oscuro .beneficios li {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px){
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
 }

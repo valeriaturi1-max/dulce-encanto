@@ -1,43 +1,46 @@
-// 🌗 Botón modo oscuro
-const btnModo = document.createElement("button");
-btnModo.id="btnModo"; btnModo.textContent="🌙";
-document.body.appendChild(btnModo);
+/* 💖 JS SUPER DINÁMICO PASTEL */
 
-if(localStorage.getItem("modo")==="oscuro"){
-  document.body.classList.add("oscuro"); btnModo.textContent="☀️";
-}
-btnModo.onclick=()=>{
-  document.body.classList.toggle("oscuro");
-  const oscuro=document.body.classList.contains("oscuro");
-  btnModo.textContent = oscuro?"☀️":"🌙";
-  localStorage.setItem("modo", oscuro?"oscuro":"claro");
-};
-
-// ⬆ Botón subir
-const btnTop = document.createElement("button");
-btnTop.id="btnTop"; btnTop.textContent="⬆";
-document.body.appendChild(btnTop);
-
-window.addEventListener("scroll",()=>{
-  btnTop.style.display = window.scrollY>300?"flex":"none";
-});
-btnTop.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-
-// ✨ Aparición de secciones al hacer scroll
-const obs = new IntersectionObserver(entries=>{
+/* ✨ Aparición suave al hacer scroll */
+const visibles = document.querySelectorAll('section, .opinion, .form-container');
+const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add("visible");
+    if(e.isIntersecting) e.target.classList.add('visible');
   });
 },{threshold:0.2});
-document.querySelectorAll("section,.form-container,.opinion")
-.forEach(el=>obs.observe(el));
+visibles.forEach(v=>observer.observe(v));
 
-// 💖 Partículas flotantes
-setInterval(()=>{
-  const p=document.createElement("div");
-  p.className="particle";
-  p.style.left = Math.random()*window.innerWidth+"px";
-  p.style.top = (window.scrollY+window.innerHeight)+"px";
-  document.body.appendChild(p);
-  setTimeout(()=>p.remove(),4000);
-},300);
+/* 💫 Partículas al mover el mouse */
+document.addEventListener('mousemove', (e)=>{
+  if(Math.random() < 0.2){
+    const p = document.createElement('div');
+    p.className='particle';
+    p.style.left = e.clientX+'px';
+    p.style.top = e.clientY+'px';
+    p.style.background = `hsl(${Math.random()*360},80%,80%)`;
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),1000);
+  }
+});
+
+/* 🌗 Botón modo oscuro/claro */
+const btnModo = document.getElementById('btnModo');
+btnModo.addEventListener('click', ()=>{
+  document.body.classList.toggle('oscuro');
+  btnModo.textContent = document.body.classList.contains('oscuro') ? '☀️' : '🌙';
+  btnModo.classList.add('bounce');
+  setTimeout(()=>btnModo.classList.remove('bounce'),300);
+});
+
+/* ⬆ Aparecer botón subir */
+const btnSubir = document.getElementById('btnSubir');
+window.addEventListener('scroll',()=>{
+  btnSubir.style.display = window.scrollY>300?'block':'none';
+});
+btnSubir.addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* 📱 Ajustes responsive automáticos */
+window.addEventListener('resize',()=>{
+  document.body.style.fontSize = window.innerWidth<500?'15px':'16px';
+});
