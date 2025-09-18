@@ -1,13 +1,12 @@
-/* 🌸 PALETA ROSADA PASTEL */
+/* 🌸 Paleta pastel dulce */
 :root {
-  --rosa-claro: #ffeaf4;
-  --rosa: #ffc2e2;
-  --rosa-vivo: #ff8ac2;
-  --rosa-fuerte: #ff5fa6;
+  --rosa-claro: #ffe3ed;
+  --rosa: #ffb6d9;
+  --rosa-fuerte: #ff6fae;
   --blanco: #ffffff;
-  --texto: #4a4a4a;
-  --sombra: 0 8px 25px rgba(255, 120, 180, 0.2);
-  --radio: 20px;
+  --gris-texto: #4a4a4a;
+  --sombra: 0 10px 25px rgba(255, 105, 180, 0.2);
+  --radius: 20px;
 }
 
 * {
@@ -18,265 +17,168 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(120deg, var(--rosa-claro), var(--rosa), var(--rosa-vivo));
-  background-size: 300% 300%;
-  animation: fondo 10s ease infinite;
-  color: var(--texto);
-  text-align: center;
+  background: linear-gradient(135deg, var(--rosa-claro), var(--rosa));
+  color: var(--gris-texto);
+  line-height: 1.6;
   padding-top: 90px;
-  overflow-x: hidden;
 }
 
-@keyframes fondo {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* 🌟 NAVBAR */
+/* 🍰 Navbar */
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px 30px;
-  border-radius: 0 0 25px 25px;
   box-shadow: var(--sombra);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
   z-index: 1000;
 }
-.navbar .logo {
-  font-size: 1.3rem;
-  font-weight: bold;
+.logo {
+  font-size: 1.4rem;
   color: var(--rosa-fuerte);
-  margin-right: 40px;
 }
-.navbar a {
+.nav-links a {
   text-decoration: none;
-  color: var(--texto);
+  color: var(--gris-texto);
+  margin: 0 10px;
   font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 12px;
-  transition: all .3s ease;
+  transition: 0.3s ease;
 }
-.navbar a:hover {
-  background: var(--rosa-vivo);
-  color: var(--blanco);
+.nav-links a:hover {
+  color: var(--rosa-fuerte);
   transform: scale(1.1);
 }
 
-/* 🍰 SECCIONES */
-section {
-  max-width: 900px;
-  margin: 80px auto 40px;
-  padding: 50px 20px;
+/* ✨ Secciones centradas */
+section, main {
   text-align: center;
-}
-section h2 {
-  color: var(--rosa-fuerte);
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 10px rgba(255,105,180,0.3);
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  animation: aparecer 1s ease;
 }
 
-/* 🌟 TARJETAS BENEFICIOS */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+section h2, main h1 {
+  color: var(--rosa-fuerte);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* 🍓 Beneficios */
 .beneficios {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
+  list-style: none;
   margin-top: 20px;
 }
 .beneficios li {
-  list-style: none;
   background: var(--blanco);
+  border-radius: var(--radius);
   padding: 20px;
-  border-radius: var(--radio);
   box-shadow: var(--sombra);
-  transition: transform .4s ease, box-shadow .4s ease;
+  transition: 0.4s ease;
 }
 .beneficios li:hover {
-  transform: translateY(-10px) rotate(-1deg) scale(1.05);
-  box-shadow: 0 12px 30px rgba(255,120,180,0.3);
+  transform: translateY(-10px) scale(1.05);
+  background: var(--rosa-claro);
 }
 
-/* 💬 OPINIONES */
+/* 📝 Opiniones */
 .opinion {
   background: var(--blanco);
-  margin: 20px auto;
+  border-radius: var(--radius);
   padding: 20px;
-  border-radius: var(--radio);
   box-shadow: var(--sombra);
+  margin: 15px auto;
   max-width: 500px;
-  transition: transform .4s ease;
+  transition: 0.3s;
 }
 .opinion:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* 💖 FORMULARIO */
+/* 💗 Formulario */
 .form-container {
   background: var(--blanco);
   padding: 40px;
-  border-radius: var(--radio);
+  border-radius: var(--radius);
   box-shadow: var(--sombra);
-  max-width: 600px;
-  margin: 60px auto;
   text-align: center;
-  animation: flotar 4s ease-in-out infinite;
 }
-
-@keyframes flotar {
-  0% {transform: translateY(0);}
-  50% {transform: translateY(-8px);}
-  100% {transform: translateY(0);}
-}
-
-.form-container h1 {
-  color: var(--rosa-fuerte);
-  margin-bottom: 10px;
-}
-
 .stars {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 8px;
+  margin: 15px 0;
 }
-
-.stars input {
-  display: none;
-}
-
 .stars label {
-  font-size: 2.2rem;
-  cursor: pointer;
+  font-size: 2rem;
   color: var(--rosa);
-  transition: transform .2s, color .2s;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
-
 .stars label:hover,
 .stars input:checked ~ label {
   color: var(--rosa-fuerte);
   transform: scale(1.3) rotate(-10deg);
 }
-
 textarea {
   width: 100%;
   padding: 14px;
-  border-radius: var(--radio);
-  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
   margin-top: 15px;
-  font-size: 1rem;
 }
-
 button[type=submit] {
-  width: 100%;
   background: var(--rosa-fuerte);
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: var(--radio);
-  padding: 14px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
+  border-radius: var(--radius);
+  padding: 14px 20px;
   margin-top: 20px;
-  transition: transform .2s ease, background .3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 button[type=submit]:hover {
-  transform: translateY(-3px) scale(1.05);
-  background: var(--rosa-vivo);
+  transform: translateY(-3px);
+  background: #ff479c;
 }
 
-/* ✨ ANIMACIÓN DE APARICIÓN */
-section, .form-container, .opinion {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all .8s ease;
-}
-.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* 🌸 Footer */
+.footer {
+  text-align: center;
+  padding: 25px 10px;
+  background: rgba(255,255,255,0.4);
+  margin-top: 50px;
+  border-top: 2px solid #fff;
 }
 
-/* 📱 RESPONSIVE */
-@media (max-width: 600px){
-  .navbar {
+/* 📱 Responsive */
+@media (max-width: 700px){
+  .nav-links {
+    display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
   }
-  section h2 {
-    font-size: 1.9rem;
+  .nav-links a {
+    margin: 5px;
   }
-  .stars label {
+  .form-container {
+    padding: 25px;
+  }
+  section h2, main h1 {
     font-size: 1.7rem;
   }
-}
-/* ✨ Partículas */
-.particle {
-  animation: floatUp 1s linear forwards;
-}
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-60px); opacity: 0; }
-}
-
-/* 🎉 Confeti */
-.confeti {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  top: -10px;
-  border-radius: 2px;
-  animation: caer 1.5s linear forwards;
-  z-index: 2000;
-}
-@keyframes caer {
-  from { transform: translateY(0) rotate(0); }
-  to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-}
-
-/* ⬆ Botón subir */
-#btnTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--rosa-fuerte);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 14px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: none;
-  box-shadow: var(--sombra);
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-#btnTop:hover {
-  transform: scale(1.1);
-}
-
-/* ☀️ / 🌙 Botón modo */
-#btnModo {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: var(--rosa-fuerte);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 16px;
-  font-size: 1.4rem;
-  box-shadow: var(--sombra);
-  cursor: pointer;
-  z-index: 1000;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
-  50% {box-shadow: 0 0 30px rgba(255,105,180,0.6);}
-  100% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
 }
