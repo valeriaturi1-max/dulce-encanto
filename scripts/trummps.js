@@ -1,77 +1,43 @@
-/* ================================
-   🌟 EFECTOS DINÁMICOS GENERALES
-   ================================ */
-
-// 🌗 BOTÓN MODO OSCURO / CLARO
+// 🌗 Botón modo oscuro
 const btnModo = document.createElement("button");
-btnModo.id = "btnModo";
-btnModo.textContent = "🌙";
+btnModo.id="btnModo"; btnModo.textContent="🌙";
 document.body.appendChild(btnModo);
 
-if (localStorage.getItem("modo") === "oscuro") {
-  document.body.classList.add("oscuro");
-  btnModo.textContent = "☀️";
+if(localStorage.getItem("modo")==="oscuro"){
+  document.body.classList.add("oscuro"); btnModo.textContent="☀️";
 }
-
-btnModo.addEventListener("click", () => {
+btnModo.onclick=()=>{
   document.body.classList.toggle("oscuro");
-  const oscuro = document.body.classList.contains("oscuro");
-  localStorage.setItem("modo", oscuro ? "oscuro" : "claro");
-  btnModo.textContent = oscuro ? "☀️" : "🌙";
+  const oscuro=document.body.classList.contains("oscuro");
+  btnModo.textContent = oscuro?"☀️":"🌙";
+  localStorage.setItem("modo", oscuro?"oscuro":"claro");
+};
 
-  // animación de giro
-  btnModo.style.transform = "rotate(360deg)";
-  setTimeout(() => btnModo.style.transform = "rotate(0deg)", 500);
-
-  // partículas
-  for (let i = 0; i < 15; i++) {
-    crearParticula(btnModo.offsetLeft + 25, btnModo.offsetTop);
-  }
-});
-
-// 🌟 BOTÓN "VOLVER ARRIBA"
+// ⬆ Botón subir
 const btnTop = document.createElement("button");
-btnTop.id = "btnTop";
-btnTop.textContent = "⬆";
+btnTop.id="btnTop"; btnTop.textContent="⬆";
 document.body.appendChild(btnTop);
 
-window.addEventListener("scroll", () => {
-  btnTop.style.display = window.scrollY > 300 ? "flex" : "none";
+window.addEventListener("scroll",()=>{
+  btnTop.style.display = window.scrollY>300?"flex":"none";
 });
-btnTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+btnTop.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 
-// 💥 BOTONES REBOTE
-document.addEventListener("click", (e) => {
-  if (e.target.tagName === "BUTTON") {
-    e.target.classList.add("bounce");
-    setTimeout(() => e.target.classList.remove("bounce"), 400);
-  }
-});
+// ✨ Aparición de secciones al hacer scroll
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("visible");
+  });
+},{threshold:0.2});
+document.querySelectorAll("section,.form-container,.opinion")
+.forEach(el=>obs.observe(el));
 
-// ✨ PARTÍCULAS DECORATIVAS
-function crearParticula(x, y) {
-  const p = document.createElement("div");
-  p.className = "particle";
-  p.style.left = x + "px";
-  p.style.top = y + "px";
-  p.style.animationDuration = (2 + Math.random() * 2) + "s";
-  p.style.transform = `scale(${0.5 + Math.random()})`;
+// 💖 Partículas flotantes
+setInterval(()=>{
+  const p=document.createElement("div");
+  p.className="particle";
+  p.style.left = Math.random()*window.innerWidth+"px";
+  p.style.top = (window.scrollY+window.innerHeight)+"px";
   document.body.appendChild(p);
-  setTimeout(() => p.remove(), 4000);
-}
-
-// 🪄 ANIMAR ENTRADA AL HACER SCROLL
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  },
-  { threshold: 0.2 }
-);
-
-document.querySelectorAll("section, .form-container, .opinion").forEach(el => {
-  observer.observe(el);
-});
+  setTimeout(()=>p.remove(),4000);
+},300);
