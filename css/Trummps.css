@@ -1,13 +1,13 @@
-/* 🎨 PALETA PASTEL VIBRANTE */
+/* 🌸 PALETA ROSADITA PASTEL */
 :root {
+  --pink-light: #ffe6f0;
   --pink: #ffb8db;
   --pink-strong: #ff6aa8;
-  --purple: #cfa9ff;
-  --yellow: #fff6b7;
+  --pink-glow: #ff91c9;
   --white: #ffffff;
   --text: #4a4a4a;
-  --radius: 18px;
-  --shadow: 0 10px 25px rgba(255, 100, 180, 0.15);
+  --radius: 20px;
+  --shadow: 0 10px 25px rgba(255, 100, 180, 0.2);
 }
 
 * {
@@ -18,13 +18,16 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, var(--pink), var(--purple), var(--yellow));
+  background: linear-gradient(120deg, var(--pink-light), var(--pink), var(--pink-strong));
   background-size: 300% 300%;
   animation: fondo 10s ease infinite;
   color: var(--text);
   line-height: 1.6;
   padding-top: 80px;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes fondo {
@@ -37,13 +40,14 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(8px);
+  width: 90%;
+  max-width: 1000px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 15px 20px;
+  gap: 25px;
+  padding: 15px 25px;
   border-radius: 0 0 20px 20px;
   box-shadow: var(--shadow);
   z-index: 1000;
@@ -66,21 +70,23 @@ body {
 section {
   text-align: center;
   padding: 70px 20px;
-  max-width: 900px;
+  max-width: 800px;
+  width: 100%;
   margin: auto;
 }
 section h2 {
   font-size: 2.2rem;
   color: var(--pink-strong);
   margin-bottom: 20px;
-  text-shadow: 0 2px 10px rgba(255,105,180,0.2);
+  text-shadow: 0 2px 10px rgba(255,105,180,0.25);
 }
 
-/* ✨ Cards de beneficios */
+/* ✨ Cards */
 .beneficios {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
   gap: 20px;
+  justify-content: center;
 }
 .beneficios li {
   list-style: none;
@@ -91,8 +97,8 @@ section h2 {
   transition: transform .4s ease, box-shadow .4s ease;
 }
 .beneficios li:hover {
-  transform: translateY(-10px) rotate(-1deg) scale(1.05);
-  box-shadow: 0 15px 30px rgba(255,100,180,0.25);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255,105,180,0.3);
 }
 
 /* 📝 Opiniones */
@@ -109,7 +115,7 @@ section h2 {
   transform: scale(1.03);
 }
 
-/* 💖 Formulario */
+/* 💖 Formulario centrado */
 .form-container {
   background: var(--white);
   padding: 40px;
@@ -134,7 +140,7 @@ textarea {
   width: 100%;
   padding: 14px;
   border-radius: var(--radius);
-  border: 1px solid #ccc;
+  border: 1px solid #ffc6de;
   margin-top: 20px;
 }
 button[type=submit] {
@@ -152,29 +158,7 @@ button[type=submit] {
 }
 button[type=submit]:hover {
   transform: translateY(-3px);
-  background: #ff3f90;
-}
-
-/* ☀️ / 🌙 Botón modo */
-#btnModo {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: var(--pink-strong);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 16px;
-  font-size: 1.4rem;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  z-index: 1000;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
-  50% {box-shadow: 0 0 30px rgba(255,105,180,0.6);}
-  100% {box-shadow: 0 0 10px rgba(255,105,180,0.3);}
+  background: var(--pink-glow);
 }
 
 /* 🌗 Modo oscuro */
@@ -199,4 +183,46 @@ body.oscuro .beneficios li {
   section h2 {
     font-size: 1.8rem;
   }
+}
+
+/* 🌟 Partículas */
+.particle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  animation: floatUp 1s linear forwards;
+  z-index: 2000;
+}
+@keyframes floatUp {
+  from {transform: translateY(0); opacity: 0.7;}
+  to {transform: translateY(-60px); opacity: 0;}
+}
+
+/* 🎉 Confeti */
+.confeti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: caer 1.5s linear forwards;
+  top: -10px;
+  z-index: 2000;
+}
+@keyframes caer {
+  from {transform: translateY(0) rotate(0);}
+  to {transform: translateY(100vh) rotate(720deg); opacity: 0;}
+}
+
+/* ✨ Aparición suave */
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+section, .form-container, .opinion {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
